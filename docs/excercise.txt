@@ -1,0 +1,8 @@
+Tugas rekan-rekan adalah melengkapi baris/fungsi/variable yang hilang sesuai komen sampai server dan client berjalan.
+Setelah itu buatlah laporan dengan isi :
+
+1. Cover
+2. Kode Program dalam bentuk tabel tanpa border line (kolom 1 berisi nomor baris, kolom 2 berisi kode)
+3. Screenshot hasil dan analisis (analisis program dan screenshot)
+
+Submit source code (4 file python) dan 1 laporan dalam format doc (bukan pdf)
