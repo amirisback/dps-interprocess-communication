@@ -12,14 +12,9 @@ Implement Simple Interprocess Communication Using Socket In Python
 - IFX - 43 - GAB
 
 # About This Project
-Simple Parser for Proposition Logic Formula
-- Program Lexical Analyzer
-- Validation Program Lexical Analyzer
-
-# Implement Automata Process
-- Finite Automata
-- Context Free Grammer
-- Push Down Automata
+- Interprocess Communication
+- TCP CLIENT to TCP SERVER
+- UDP CLIENT to UDP SEVER
 
 # Result - Screen Shot App
 - Team Name
@@ -29,7 +24,6 @@ Simple Parser for Proposition Logic Formula
 https://github.com/amirisback/Interprocess-Communication/blob/master/docs/excercise.txt
 
 # Link Report
-
 
 # Attention !!!
 Please enjoy and don't forget fork and give a star
