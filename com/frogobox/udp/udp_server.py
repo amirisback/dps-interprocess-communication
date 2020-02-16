@@ -3,7 +3,6 @@ import socket
 from com.frogobox.base.config import *
 
 # Berikan tampilan (print bahwa socket berhasil dibuat)
-
 print(BASE_MESSAGE_CONNECTING)
 print()
 

@@ -13,13 +13,12 @@ BUFFER = BASE_CONFIG_BUFFER
 
 # definisikan pesan yang akan disampaikan
 MESSAGE = 'TCP ' + MESSAGE_REQUEST
-TARGET = (SERVER_ADDR, SERVICE_PORT)
 
 # buat socket TCP
 tcpClient = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # lakukan koneksi ke server dengan parameter IP dan Port yang telah didefinisikan
-tcpClient.connect(TARGET)
+tcpClient.connect((SERVER_ADDR, SERVICE_PORT))
 
 # kirim pesan ke server, pesan bebas, dan ditambahkan nama anggota kelompok
 tcpClient.send(MESSAGE.encode())
