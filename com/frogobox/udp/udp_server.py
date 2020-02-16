@@ -8,30 +8,29 @@ print(BASE_MESSAGE_CONNECTING)
 print()
 
 # definisikan alamat IP bind dari server
-IP_ADDR = BASE_CONFIG_IP_ADDRESS
+UDP_SERVER_IP = BASE_CONFIG_IP_ADDRESS
 
 # definisikan port number untuk bind dari server
-PORT = BASE_CONFIG_PORT
-BUFFER = BASE_CONFIG_BUFFER
-ADDR = (IP_ADDR, PORT)
+UDP_SERVER_PORT = BASE_CONFIG_PORT
+UDP_SERVER_BUFFER = BASE_CONFIG_BUFFER
 
 # buat socket bertipe UDP
 with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udpServer:
     # lakukan bind
-    udpServer.bind(ADDR)
+    udpServer.bind((UDP_SERVER_IP, UDP_SERVER_PORT))
 
     # Berikan tampilan (print) bahwa socket bind ke alamat IP dengan port yang telah didapatkan
 
     # loop forever
     while True:
         # terima pesan dari client
-        data, address = udpServer.recvfrom(BUFFER)
+        messageFromClient, address = udpServer.recvfrom(UDP_SERVER_BUFFER)
 
-        if not data:
+        if not messageFromClient:
             break
 
         # menampilkan hasil pesan dari client
-        print('Data \t\t\t:', data.decode())
+        print('Data \t\t\t:', messageFromClient.decode())
 
         # print (addr)
         print('Received from \t: ', address)
