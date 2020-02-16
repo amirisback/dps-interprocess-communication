@@ -3,11 +3,12 @@ import socket
 from com.frogobox.base.config import *
 
 # Berikan tampilan (print bahwa socket berhasil dibuat)
+print("Socket Has Been Created")
 print(BASE_MESSAGE_CONNECTING)
 print()
 
 # definisikan alamat IP bind dari server
-IP_ADDR = BASE_CONFIG_IP_ADDR
+IP_ADDR = BASE_CONFIG_IP_ADDRESS
 
 # definisikan port number untuk bind dari server
 PORT = BASE_CONFIG_PORT
@@ -15,10 +16,7 @@ BUFFER = BASE_CONFIG_BUFFER
 ADDR = (IP_ADDR, PORT)
 
 # buat socket bertipe UDP
-with socket.socket(
-        socket.AF_INET,
-        socket.SOCK_DGRAM
-) as udpServer:
+with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as udpServer:
     # lakukan bind
     udpServer.bind(ADDR)
 

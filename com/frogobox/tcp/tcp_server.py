@@ -3,24 +3,21 @@ import socket
 from com.frogobox.base.config import *
 
 # definisikan alamat IP binding  yang akan digunakan
-IP_ADDR = BASE_CONFIG_IP_ADDR
+IP_ADDRESS = BASE_CONFIG_IP_ADDRESS
 
 # definisikan port number binding  yang akan digunakan
 PORT = BASE_CONFIG_PORT
 
 # definisikan ukuran buffer untuk mengirimkan pesan
 BUFFER = BASE_CONFIG_BUFFER
-ADDR = (IP_ADDR, PORT)
+LINK = (IP_ADDRESS, PORT)
 
 print(BASE_MESSAGE_CONNECTING)
 
 # buat socket bertipe TCP
-with socket.socket(
-        socket.AF_INET,
-        socket.SOCK_STREAM
-) as tcpServer:
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcpServer:
     # lakukan bind
-    tcpServer.bind(ADDR)
+    tcpServer.bind(LINK)
 
     # server akan listen menunggu hingga ada koneksi dari client
     tcpServer.listen()
