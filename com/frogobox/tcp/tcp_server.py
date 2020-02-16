@@ -1,30 +1,55 @@
-# /** START CODE **/
+#! /usr/bin/python3
 
 # import library socket karena akan menggunakan IPC socket
 import socket
+from com.frogobox.base.config import *
 
+# Environment
 # definisikan alamat IP binding  yang akan digunakan
+IP_ADDR = BASE_CONFIG_IP_ADDR
 
 # definisikan port number binding  yang akan digunakan
+PORT = BASE_CONFIG_PORT
 
 # definisikan ukuran buffer untuk mengirimkan pesan
+BUFFER = BASE_CONFIG_BUFFER
+ADDR = (IP_ADDR, PORT)
+
+# Make TCP Server
+print(BASE_MESSAGE_CONNECTING)
 
 # buat socket bertipe TCP
+with socket.socket(
+        socket.AF_INET,
+        socket.SOCK_STREAM
+) as tcpServer:
+    # lakukan bind
+    tcpServer.bind(ADDR)
 
-# lakukan bind
+    # server akan listen menunggu hingga ada koneksi dari client
+    tcpServer.listen()
 
-# server akan listen menunggu hingga ada koneksi dari client
+    # menerima koneksi
+    connection, address = tcpServer.accept()
 
-# lakukan loop forever
-# while 1:
-# menerima koneksi
+    with connection:
 
-# menampilkan koneksi berupa IP dan port client yang terhubung menggunakan print
+        # lakukan loop forever
+        while True:
 
-# menerima data berdasarkan ukuran buffer
+            # menampilkan koneksi berupa IP dan port client yang terhubung menggunakan print
+            print('Connected by: ', address)
 
-# menampilkan pesan yang diterima oleh server menggunakan print,
+            # menerima data berdasarkan ukuran buffer
+            data = connection.recv(BUFFER)
 
-# mengirim kembali data yang diterima dari client kepada client
+            if not data:
+                break
 
-# tutup koneksi
+            # menampilkan pesan yang diterima oleh server menggunakan print,
+            print('Data :', str(data, 'utf-8'))
+
+            # mengirim kembali data yang diterima dari client kepada client
+            connection.send(data)
+
+tcpServer.close()
