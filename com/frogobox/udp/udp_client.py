@@ -1,5 +1,3 @@
-#! /usr/bin/python3
-
 # import library socket karena akan menggunakan IPC socket
 import socket
 from com.frogobox.base.config import *
@@ -11,6 +9,8 @@ UDP_IP = BASE_CONFIG_IP_ADDR
 UDP_PORT = BASE_CONFIG_PORT
 TARGET = (UDP_IP, UDP_PORT)
 MESSAGE = 'UDP ' + MESSAGE_REQUEST
+
+print('Sending Message ' + MESSAGE)
 
 # buat socket bertipe UDP
 with socket.socket(

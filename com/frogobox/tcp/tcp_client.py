@@ -1,10 +1,7 @@
-#!/usr/bin/env python3
-
 # import library socket karena akan menggunakan IPC socket
 import socket
 from com.frogobox.base.config import *
 
-# Environment
 # definisikan tujuan IP server
 SERVER_ADDR = BASE_CONFIG_IP_ADDR
 
